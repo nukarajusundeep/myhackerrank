@@ -1,12 +1,25 @@
-def print_rangoli(size):
-    # your code goes here
-    for i in range(0,size):
-        print("--")
+import string
 
-size = int(input())
-try:
-    if size > 27 and size < 0:
-except ValueError:
-    print("Value should not be greater than 26 or less than 0")
+def first_half(size):
+    mid = size - 1
+    for i in range(size - 1, 0, -1):
+        row = ['-'] * (2 * size - 1)
+        for j in range(size - i):
+            row[mid - j] = row[mid + j] = string.ascii_lowercase[j + i]
+        print('-'.join(row))
 
-print_rangoli(size)
+def second_half(size):
+    mid = size - 1
+    for i in range(0, size):
+        row = ['-'] * (2 * size - 1)
+        for j in range(size - i):
+            row[mid - j] = row[mid + j] = string.ascii_lowercase[j + i]
+        print('-'.join(row))
+def rangoli(size):
+    first_half(size)
+    second_half(size)
+
+
+if __name__ == '__main__':
+    size = int(input("Enter the size of rangoli: "))
+    rangoli(size)
