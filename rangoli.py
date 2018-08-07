@@ -19,7 +19,6 @@ def rangoli(size):
     first_half(size)
     second_half(size)
 
-
 if __name__ == '__main__':
     size = int(input("Enter the size of rangoli: "))
     rangoli(size)
